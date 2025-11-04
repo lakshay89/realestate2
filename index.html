@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Horizon Residences – Indirapuram Ghaziabad</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
+  <!-- Optional: Include your custom stylesheets for finer controls -->
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+    }
+    .navbar, .footer {
+      background: #000;
+    }
+    .btn-gold {
+      background: #ce982d;
+      color: #fff;
+      border: none;
+    }
+    .divider { border-top: 2px solid #ce982d; width: 60px; margin: 1rem auto; }
+    .rera { color: #ffd700; }
+    section, .section-bg { padding: 2.2rem 1rem; margin-bottom: 2rem; border-radius: 18px; background: #000; }
+    .floorplan-img, .gallery-img { max-width: 100%; border-radius: 10px; margin-bottom: 1rem; }
+    .map-embed { width: 100%; min-height:320px; border:none;}
+    a, a:hover { color: #ce982d; }
+    .footer-note { font-size: 0.90rem; color: #aaa;}
+    .main-header img { width: 100%; object-fit:cover; }
+    .checks { list-style: none; padding: 0; }
+    .checks li:before { content: '✔ '; color: #ce982d;}
+	 body, html {
+      height: 100%;
+      margin: 0;
+    }
+
+    .hero-section {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 2;
+    }
+
+    .slide-indicators {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      gap: 8px;
+    }
+
+    .slide-indicators button {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.5);
+      transition: background-color 0.3s;
+    }
+
+    .slide-indicators button.active {
+      background-color: #d4af37;
+    }
+
+	.form-section {
+      padding: 4rem 0;
+    }
+    .form-section h2 {
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    .video-container video {
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .form-box {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    .form-box button {
+      background-color: #d4af37;
+      color: #000;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+    .form-box button:hover {
+      background-color: #b8941f;
+      color: #000;
+    }
+    .form-box input:focus {
+      border-color: #d4af37 !important;
+      box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25) !important;
+    }
+    .success-message {
+      background: #d1fae5;
+      color: #065f46;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+    <!-- Header Top -->
+    <nav class="navbar navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="images/Harmony-logo-2.png" style="height:44px;margin-right:16px" alt="logo">
+          THE HORIZON RESIDENCES BY HARMONY INFRA
+        </a>
+        <a href="#" class="btn btn-gold">Download Brochure</a>
+      </div>
+      <div class="bg-dark w-100">
+        <ul class="nav justify-content-center py-2">
+          <li class="nav-item"><a class="nav-link text-white" href="#">HOME</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">ABOUT</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">FLOOR PLAN</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">GALLERY</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">PRICE LIST</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">CONTACT US</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section id="home" class="hero-section">
+    <!-- Slides -->
+    <div class="hero-slide active">
+      <img src="https://thehorizonresidences.co.in/wp-content/uploads/2025/10/The-Horizon-Residence.png" alt="Horizon 1">
+      <div class="overlay"></div>
+    </div>
+    <div class="hero-slide">
+      <img src="https://thehorizonresidences.co.in/wp-content/uploads/2025/10/the-horizon-residences-3.png" alt="Horizon 2">
+      <div class="overlay"></div>
+    </div>
+    <div class="hero-slide">
+      <img src="https://thehorizonresidences.co.in/wp-content/uploads/2025/10/the-horizon-residences-2.png" alt="Horizon 3">
+      <div class="overlay"></div>
+    </div>
+    <div class="hero-slide">
+      <img src="https://thehorizonresidences.co.in/wp-content/uploads/2025/10/the-horizon-residnces-5.png" alt="Horizon 4">
+      <div class="overlay"></div>
+    </div>
+
+    <!-- Indicators -->
+    <div class="slide-indicators">
+      <button class="active" onclick="showSlide(0)"></button>
+      <button onclick="showSlide(1)"></button>
+      <button onclick="showSlide(2)"></button>
+      <button onclick="showSlide(3)"></button>
+    </div>
+  </section>
+
+    <div class="container">
+
+      <!-- Text + RERA -->
+      <section class="bg-transparent pb-0">
+        <!-- About Project (first paragraph) -->
+        <div style="font-size:13px;">
+        The Horizon Residences – Indirapuram Ghaziabad is an exciting pre-launch residential project by Harmony Infra, located in the bustling area of Indirapuram. This project features thoughtfully designed 4 and 5 BHK apartments, aiming to provide a modern living experience suitable for families and professionals.
+
+        The strategic location offers excellent connectivity to Delhi NCR through major roads and public transport, ensuring convenience for daily commutes. Residents will benefit from proximity to essential amenities such as schools, hospitals, and shopping malls, enhancing their quality of life.
+
+        This pre-launch development features well-designed apartments in various configurations, including 4 BHK (2068.08 sq. ft.), 4.5 BHK (2281.32 sq. ft.), and 5 BHK (2485.19 sq. ft.), catering to modern living needs for families and professionals alike. The project promises spacious layouts that emphasize comfort and functionality. With a focus on competitive pricing, it presents a great opportunity for early investors and homebuyers.
+        </div>
+        <div class="text-center mt-2">
+          <span class="text-warning">HORIZON RESIDENCES RERA NUMBER - UPRERAPRJ223953</span>
+        </div>
+      </section>
+
+      <!-- Video + Form -->
+      <!-- <div class="row">
+        <div class="col-md-6 mb-2 mb-md-0">
+          <img src="images/section-img.jpg" alt="" class="img-fluid mb-3">
+          <video class="w-100" style="border-radius:12px;" poster="images/video-poster.jpg" controls>
+            <source src="media/Harmony-V.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="col-md-6">
+          <form class="bg-dark p-4 rounded">
+            <h5 class="text-center">THE HORIZON RESIDENCES</h5>
+            <input class="form-control mb-2" placeholder="Name" required>
+            <input type="email" class="form-control mb-2" placeholder="Email" required>
+            <input type="tel" class="form-control mb-2" maxlength="10" placeholder="Mobile Number" required>
+            <button class="btn btn-gold w-100 mb-2">Get Final Price</button>
+            <div>
+              <div class="small">Harmony Infra | Premium Apartments in Indirapuram in Ghaziabad.</div>
+              <ul class="checks small">
+                <li>Nature-themed lifestyle</li>
+                <li>25+ Amenities</li>
+                <li>Excellent connectivity to key areas 4 & 5 BHK Apt</li>
+                <li>Starting Price: ₹ 5.50 Cr*</li>
+              </ul>
+            </div>
+          </form>
+        </div>
+      </div> -->
+
+
+	  <section class="form-section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2>HORIZON RESIDENCES RERA NUMBER - UPRERAPRJ223953</h2>
+      </div>
+
+      <div class="row align-items-center g-5">
+        <!-- Video Section -->
+        <div class="col-lg-6">
+          <div class="video-container">
+            <video class="w-75" controls autoplay muted loop poster="https://thehorizonresidences.co.in/wp-content/uploads/2025/10/The-Horizon-Residence.png">
+              <source src="https://thehorizonresidences.co.in/wp-content/uploads/2025/09/Harmony-V.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
+        <!-- Form Section -->
+        <div class="col-lg-6">
+          <div class="form-box">
+            <h3 class="text-center mb-4 fw-bold">THE HORIZON RESIDENCES</h3>
+            
+            <div id="successMessage" class="success-message">
+              Thank you! We will contact you soon.
+            </div>
+
+            <form id="enquiryForm">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
+                <input type="text" id="name" name="name" class="form-control" required placeholder="Name">
+              </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Email">
+              </div>
+
+              <div class="mb-3">
+                <label for="mobile" class="form-label">Mobile Number <span class="text-danger">*</span></label>
+                <input type="tel" id="mobile" name="mobile" class="form-control" required placeholder="Mobile Number">
+              </div>
+
+              <button type="submit" class="btn w-100 py-2">Get Final Price</button>
+            </form>
+
+            <div class="mt-4 text-secondary small">
+              <p class="fw-semibold mb-2">Harmony Infra | Premium Apartments in Indirapuram, Ghaziabad.</p>
+              <ul class="list-unstyled">
+                <li><i class="ri-check-line text-success me-2"></i>Nature-themed lifestyle</li>
+                <li><i class="ri-check-line text-success me-2"></i>25+ Amenities</li>
+                <li><i class="ri-check-line text-success me-2"></i>Excellent connectivity to key areas | 4 & 5 BHK Apt Starting Price: ₹ 5.50 Cr*</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- 1111111111111111111111 -->
+
+      <!-- Harmony Infra Info -->
+      <section>
+        <div><b>Harmony Infra Group</b> is a multifaceted organization known for its diverse ventures across various sectors, including real estate, construction, and hospitality. Established with a vision to innovate and elevate standards in each industry, Harmony Infra Group focuses on delivering quality, sustainability, and customer satisfaction. With a commitment to excellence and a strong emphasis on community development, the group aims to create impactful projects that enhance the living experience and contribute to the growth of the regions they operate in. Their portfolio often showcases modern designs, state-of-the-art facilities, and a dedication to creating lasting value for clients and stakeholders alike.</div>
+      </section>
+
+      <!-- Floor Plans Section -->
+      <section class="text-center">
+        <div class="mb-3"><span>Available Floor Plans</span></div>
+        <div>Harmony</div>
+        <h3 class="mb-2">THE HORIZON RESIDENCES</h3>
+        <div>offers 4 BHK, 4.5 BHK, and 5 BHK luxury apartments. Fill the form below to download floor plans.</div>
+        <div class="row mt-4 justify-content-center">
+          <div class="col-12 col-sm-4 mb-2">
+            <img class="floorplan-img" src="images/f2.webp" alt="4 BHK Floor Plan">
+          </div>
+          <div class="col-12 col-sm-4 mb-2">
+            <img class="floorplan-img" src="images/f1.webp" alt="4.5 BHK Floor Plan">
+          </div>
+          <div class="col-12 col-sm-4 mb-2">
+            <img class="floorplan-img" src="images/f3.webp" alt="5 BHK Floor Plan">
+          </div>
+        </div>
+      </section>
+
+      <!-- Living Experience Section -->
+      <section>
+        <strong>Harmony promises a living experience like no other.</strong>
+        <ul class="checks">
+          <li>Offers well-designed 4 & 5 BHK apartments.</li>
+          <li>Close to schools, hospitals, shopping malls, and essential amenities.</li>
+          <li>Early investors can secure homes in a promising location.</li>
+          <li>Registered under RERA for transparency and regulatory adherence.</li>
+          <li>Vastu-compliant architecture</li>
+          <li>Developed by Harmony Infra, known for quality and customer satisfaction.</li>
+          <li>Super Luxury Specifications</li>
+          <li>Superior Carpet Area Efficiency</li>
+        </ul>
+      </section>
+
+      <!-- Feature Image Section -->
+      <section class="text-center">
+        <img src="images/the-horizon-residences-3-1024x577.png" class="img-fluid mb-3" alt="">
+        <div>
+        <strong>HARMONY GROUP PRESENT THE HORIZON RESIDENCES</strong><br>
+        <span class="rera">RERA NUMBER - UPRERAPRJ223953</span>
+        </div>
+        <a href="#" class="btn btn-gold mt-2">Get Full Detail</a>
+      </section>
+
+      <!-- Price Details Section -->
+      <section>
+        <div>
+          <p>The current pre-launch offer price for this property is approx Rs 15,000/- sq ft + other charges (approx. Rs 500-600/- sq ft). This price is expected to rise to approx. Rs 16,500/- sq ft to Rs 17,000/- sq ft + other charges.</p>
+          <p>Their pre-booking payment plan is structured in the ratio of 40:30:30, i.e.</p>
+          <ul class="checks">
+            <li>40% payment at the time of launch</li>
+            <li>30% at the time of superstructure completion</li>
+            <li>30% at the time of possession</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Payment Plan & Master Plan Section -->
+      <div class="row text-center">
+        <div class="col-md-6">
+          <h2>PAYMENT PLAN</h2>
+          <img src="images/costing-details.jpg" class="img-fluid" alt="Payment Plan">
+        </div>
+        <div class="col-md-6">
+          <h2>MASTER PLAN</h2>
+          <img src="images/master-plan.jpg" class="img-fluid" alt="Master Plan">
+        </div>
+      </div>
+
+      <!-- Location and Benefits -->
+      <section>
+        <h2>Connectivity & Location Benefits - The Horizon Residences - Indirapuram Ghaziabad.</h2>
+        <iframe class="map-embed" src="https://maps.google.com/maps?q=Harmony%20Infra&t=m&z=10&output=embed&iwloc=near" title="Harmony Infra"></iframe>
+        <div>Indirapuram is Ghaziabad’s most desirable location, majorly preferred by government employees, bank staff, bureaucrats, and IT professionals working in Central Delhi, Ghaziabad, and Sector 62, Noida. Living in The Horizon Residences – Indirapuram Ghaziabad, Indirapuram, means easy access to major highways (NH 24 – 5 mins drive) and metro lines (Sector 62 and Vaishali metro station – 10 mins drive), making commutes a breeze. Residents can also have easy access to facilities such as malls (North India Mall), hospitals (Max Super Speciality Hospital, Yashoda Hospital), top-tier educational institutes (DPS Indirapuram, Cambridge School), etc., located in proximity. Additionally, the project is located directly opposite the Indirapuram Habitat Center and near good residential townships, which could positively impact resale and rental demand.</div>
+      </section>
+
+      <!-- Gallery Section -->
+      <section>
+        <h2 class="text-center">Gallery Of The Horizon Residences</h2>
+        <div class="row justify-content-center">
+          <div class="col-4 col-md-2 mb-2">
+            <img src="images/the-horizon-residnces-5-1024x577.png" class="gallery-img img-fluid" alt="">
+          </div>
+          <div class="col-4 col-md-2 mb-2">
+            <img src="images/the-horizon-residences-2-1024x577.png" class="gallery-img img-fluid" alt="">
+          </div>
+          <div class="col-4 col-md-2 mb-2">
+            <img src="images/imgi_41_harmony-horizon-residences-ghaziabad-DmgCrDb56aLfUhneTw44NA-1024x521.jpg" class="gallery-img img-fluid" alt="">
+          </div>
+          <div class="col-4 col-md-2 mb-2">
+            <img src="images/the-horizon-residences-2-1024x577.png" class="gallery-img img-fluid" alt="">
+          </div>
+          <div class="col-4 col-md-2 mb-2">
+            <img src="images/The-Horizon-Residence-1024x549.png" class="gallery-img img-fluid" alt="">
+          </div>
+        </div>
+      </section>
+
+      <!-- Disclaimer / Footer Section -->
+      <!-- <footer class="footer text-center py-4 mt-4">
+        <div class="container">
+          <p class="footer-note"><strong>Disclaimer:</strong> This advertisement is indicative in nature & may not constitute as an offer or invitation for the purpose of registration/booking/sale. Visual and other representations including amenities, specifications in this advertisement are purely conceptual / artistic impressions and does not constitute a legal offering or binding.</p>
+          <p class="footer-note">Actual could substantially differ from the above. The viewer / prospective buyer may seek all such information including sanctioned plans, approvals, development schedule, specifications, facilities & amenities, from the company in respect of the concerned project that he/she may be interested in, before any such booking/registration, etc. Further, details of the project are available on the company/site/marketing office(s) and/or company website and on the website or RERA, Delhi @ rera.delhi.gov.in or at its office. <a href="#" style="color:#ce982d;">Privacy Policy</a></p>
+          <p>&copy; 2025 The Horizon Residences by Harmony Infra</p>
+        </div>
+      </footer> -->
+	   <footer class="bg-[#050B35] text-white py-8">
+  <div class="container mx-auto px-4">
+    <div class="text-center">
+      <p class="text-sm leading-relaxed mb-4">
+        <strong>Disclaimer:</strong> This advertisement is indicative in nature &amp; may not constitute as an offer or invitation for the purpose of registration/booking/sale. Visual and other representations including amenities, specifications in this advertisement are purely conceptual / artistic impressions does not constitute a legal offering or binding.
+      </p>
+      <p class="text-sm leading-relaxed mb-4">
+        Actual could substantially differ from the above. The viewer / prospective buyer may seek all such information including sanctioned plans, approvals, development schedule, specifications, facilities &amp; amenities, from the company in respect of the concerned project that he/she may be interested in, before any such booking/registration, etc. Further, details of the project are available on the company/site/marketing office(s) and/or company website and on the website or RERA, Delhi @ rera.delhi.gov.in or at its office.
+      </p>
+      <div class="border-t border-gray-600 pt-4 mt-4">
+        <p class="text-sm">
+          © 2025 The Horizon Residences by Harmony Infra. All rights reserved. | 
+          <a href="#" class="text-[#d4af37] hover:underline ml-1">Privacy Policy</a> | 
+          <a href="https://readdy.ai/?origin=logo" class="text-[#d4af37] hover:underline ml-1">Website Builder</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script>
+    const slides = document.querySelectorAll('.hero-slide');
+    const indicators = document.querySelectorAll('.slide-indicators button');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides[currentSlide].classList.remove('active');
+      indicators[currentSlide].classList.remove('active');
+      currentSlide = index;
+      slides[currentSlide].classList.add('active');
+      indicators[currentSlide].classList.add('active');
+    }
+
+    function autoSlide() {
+      let next = (currentSlide + 1) % slides.length;
+      showSlide(next);
+    }
+
+    setInterval(autoSlide, 3000);
+  </script>
+
+  <script>
+    const form = document.getElementById('enquiryForm');
+    const successMsg = document.getElementById('successMessage');
+    
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      successMsg.style.display = 'block';
+      form.reset();
+      setTimeout(() => {
+        successMsg.style.display = 'none';
+      }, 3000);
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
