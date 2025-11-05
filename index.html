@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
   <!-- Optional: Include your custom stylesheets for finer controls -->
   <style>
-    body {
+    /* body {
       background: #000;
       color: #fff;
       font-family: 'Poppins', sans-serif;
@@ -129,23 +129,241 @@
       border-radius: 5px;
       margin-bottom: 15px;
       display: none;
-    }
+    } */
+     body {
+  background: #000;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar, .footer {
+  background: #000;
+}
+
+.btn-gold {
+  background: #ce982d;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 7px;
+}
+
+.divider { border-top: 2px solid #ce982d; width: 60px; margin: 1rem auto; }
+
+.rera { color: #ffd700; }
+
+section, .section-bg {
+  padding: 2.2rem 1rem;
+  margin-bottom: 2rem;
+  border-radius: 18px;
+  background: #000;
+}
+
+.floorplan-img, .gallery-img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.map-embed { width: 100%; min-height:320px; border:none;}
+
+a, a:hover { color: #ce982d; }
+.footer-note { font-size: 0.90rem; color: #aaa;}
+.main-header img { width: 100%; object-fit:cover; }
+
+.checks { list-style: none; padding: 0; }
+.checks li:before { content: '✔ '; color: #ce982d;}
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.slide-indicators {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 8px;
+}
+
+.slide-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: background-color 0.3s;
+}
+
+.slide-indicators button.active {
+  background-color: #d4af37;
+}
+
+.form-section {
+  padding: 4rem 0;
+}
+.form-section h2 {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.video-container video {
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  width: 100%;
+}
+.form-box {
+  background: #fff;
+  padding: 2rem 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+.form-box button {
+  background-color: #d4af37;
+  color: #000;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+.form-box button:hover {
+  background-color: #b8941f;
+  color: #000;
+}
+.form-box input:focus {
+  border-color: #d4af37 !important;
+  box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25) !important;
+}
+.success-message {
+  background: #d1fae5;
+  color: #065f46;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  display: none;
+}
+
+/* -- Responsive improvements -- */
+@media (max-width: 991.98px) {
+  .section, .section-bg {
+    padding: 1.4rem 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+  }
+  .form-section {
+    padding: 2.4rem 0;
+  }
+  .main-header img,
+  .gallery-img,
+  .floorplan-img {
+    max-width: 100%;
+    height: auto;
+  }
+  h2,
+  h3,
+  .fs-4,
+  .fs-5 {
+    font-size: 1.1rem;
+  }
+  .form-box {
+    padding: 1.2rem 0.7rem;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .container,
+  .container-fluid {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  section,
+  .section-bg {
+    margin-bottom: 1rem;
+    border-radius: 7px;
+    padding: 1.1rem 4px;
+  }
+  .form-section {
+    padding: 1.4rem 2px;
+  }
+  .divider { width: 30px; }
+  h2,
+  h3,
+  .fs-5,
+  .fs-4 { font-size: 1rem !important; }
+  .form-box {
+    padding: 0.8rem 0.3rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+  }
+  .checks,
+  .list-unstyled {
+    font-size: 0.95rem;
+  }
+  .navbar-brand  { font-size: 12px;}
+  .navbar-brand img {
+    height: 32px !important;
+    margin-right: 8px;
+  }
+  .map-embed { min-height: 220px; }
+  .aaa{display: flex !important; align-items: center !important; justify-content: center !important; flex-direction}
+  .btn-gold{padding: 12px 12px ; font-size: 12px;}
+
+}
+
+@media (max-width: 575.98px) {
+  .main-header img { height: 160px; }
+  .hero-section { height: 50vh; }
+  .video-container video { width: 100%; height: 560px; }
+  .form-box { font-size: 0.92rem; }
+  .aaa{display: flex; align-items: center; justify-content: center;}
+  .nav-item .nav-link{ font-size: 20px; padding: 10px 14px;}
+  .video-container{display: flex; align-items: center; justify-content: center;}
+}
+
   </style>
 </head>
 <body>
 
     <!-- Header Top -->
     <nav class="navbar navbar-dark">
-      <div class="container-fluid">
+      <div class="container-fluid aaa d-flex align-items-center">
         <a class="navbar-brand" href="#">
-          <img src="images/Harmony-logo-2.png" style="height:44px;margin-right:16px" alt="logo">
+          <img src="images/Harmony-logo-2.png" style="height:44px; margin-right:16px" alt="logo">
           THE HORIZON RESIDENCES BY HARMONY INFRA
         </a>
-        <a href="#" class="btn btn-gold">Download Brochure</a>
+        <a href="/media/Harmony Brochure_ (1).pdf" target="_blank" class="btn btn-gold">Download Brochure</a>
       </div>
-      <div class="bg-dark w-100">
+      <div class=" w-100" >
         <ul class="nav justify-content-center py-2">
-          <li class="nav-item"><a class="nav-link text-white" href="#">HOME</a></li>
+          <li class="nav-item" ><a class="nav-link " style="color:#8a7e4d;" href="#">HOME</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="#">ABOUT</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="#">FLOOR PLAN</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="#">GALLERY</a></li>
@@ -189,7 +407,7 @@
       <!-- Text + RERA -->
       <section class="bg-transparent pb-0">
         <!-- About Project (first paragraph) -->
-        <div style="font-size:13px;">
+        <div class="fs-5">
         The Horizon Residences – Indirapuram Ghaziabad is an exciting pre-launch residential project by Harmony Infra, located in the bustling area of Indirapuram. This project features thoughtfully designed 4 and 5 BHK apartments, aiming to provide a modern living experience suitable for families and professionals.
 
         The strategic location offers excellent connectivity to Delhi NCR through major roads and public transport, ensuring convenience for daily commutes. Residents will benefit from proximity to essential amenities such as schools, hospitals, and shopping malls, enhancing their quality of life.
@@ -197,7 +415,7 @@
         This pre-launch development features well-designed apartments in various configurations, including 4 BHK (2068.08 sq. ft.), 4.5 BHK (2281.32 sq. ft.), and 5 BHK (2485.19 sq. ft.), catering to modern living needs for families and professionals alike. The project promises spacious layouts that emphasize comfort and functionality. With a focus on competitive pricing, it presents a great opportunity for early investors and homebuyers.
         </div>
         <div class="text-center mt-2">
-          <span class="text-warning">HORIZON RESIDENCES RERA NUMBER - UPRERAPRJ223953</span>
+          <span class=" fs-4 " style="color:#8a7e4d;">HORIZON RESIDENCES RERA NUMBER - UPRERAPRJ223953</span>
         </div>
       </section>
 
@@ -277,9 +495,9 @@
             </form>
 
             <div class="mt-4 text-secondary small">
-              <p class="fw-semibold mb-2">Harmony Infra | Premium Apartments in Indirapuram, Ghaziabad.</p>
-              <ul class="list-unstyled">
-                <li><i class="ri-check-line text-success me-2"></i>Nature-themed lifestyle</li>
+              <p class="fw-semibold mb-2 text-black fs-5">Harmony Infra | Premium Apartments in Indirapuram, Ghaziabad.</p>
+              <ul class="list-unstyled text-black fs-5">
+                <li><i class="ri-check-line text-success me-2 "></i>Nature-themed lifestyle</li>
                 <li><i class="ri-check-line text-success me-2"></i>25+ Amenities</li>
                 <li><i class="ri-check-line text-success me-2"></i>Excellent connectivity to key areas | 4 & 5 BHK Apt Starting Price: ₹ 5.50 Cr*</li>
               </ul>
@@ -292,37 +510,180 @@
 
 
 
+  <!-- Bootstrap v5 Section Example -->
+<section class="container py-5">
+
+<div class="col text-center">
+            <h2>Leadership Introduction
+</h2>
+            <div class="divider"></div>
+          </div>
+  <div class="row g-4 mt-5 align-items-center">
+    <!-- First Profile -->
+    <div class="col-md-6">
+      <div class="  h-100">
+        <div class="row g-4 align-items-center">
+          <div class="col-12 col-lg-5">
+            <img src="images/p12.png" class="img-fluid rounded w-100" alt="Profile 1">
+          </div>
+          <div class="col-12 col-lg-7">
+            <div class="card-body">
+              <h3 class="card-title fs-4 pb-2" style="color: #ab8d4d; font-family: serif;">MR. SAILANDER SOLANKI</h3>
+              <p class="mb-2 fw-bold " style="color: #ab8d4d;">FOUNDER & DIRECTOR - HARMONY INFRA &amp; SHRI. VENKATESHWARA GROUP.</p>
+              <hr>
+              <p class="fst-italic">"Action always generates inspiration. Inspiration seldom generates action."</p>
+              <div>
+                <!-- <h6 class="fw-bold">Profile Highlights</h6> -->
+                <ul>
+                  <li>Chairman of <span >SHRI. VENKATESHWARA GROUP</span></li>
+                  <li>Education leader and entrepreneur excelling in academics and real estate.</li>
+                  <li>Alumnus of Wynberg Allen School, Mussoorie; Bachelor’s in Informatics Sciences (VTU, Belgaum); MBA (Kingston University, UK)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Second Profile -->
+    <div class="col-md-6">
+      <div class=" h-100">
+        <div class="row g-3 align-items-center">
+          <div class="col-12 col-lg-5">
+            <img src="images/p123.png" class="img-fluid rounded-start w-100" alt="Profile 2">
+          </div>
+          <div class="col-12 col-lg-7">
+            <div class="card-body">
+              <h3 class="card-title" style="color: #ab8d4d; font-family: serif;">MR. HS KANDHARI</h3>
+              <p class="mb-2 fw-bold" style="color: #fff;">EXECUTIVE DIRECTOR, HARMONY INFRA</p>
+              <hr>
+              <p class="fst-italic">"A man with vision leading with purpose and building what others only imagine"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
 
   <!-- 1111111111111111111111 -->
 
       <!-- Harmony Infra Info -->
-      <section>
-        <div><b>Harmony Infra Group</b> is a multifaceted organization known for its diverse ventures across various sectors, including real estate, construction, and hospitality. Established with a vision to innovate and elevate standards in each industry, Harmony Infra Group focuses on delivering quality, sustainability, and customer satisfaction. With a commitment to excellence and a strong emphasis on community development, the group aims to create impactful projects that enhance the living experience and contribute to the growth of the regions they operate in. Their portfolio often showcases modern designs, state-of-the-art facilities, and a dedication to creating lasting value for clients and stakeholders alike.</div>
+      <section class="container">
+        <div class="col text-center">
+            <h2>About Harmony Infra Group</h2>
+            <div class="divider"></div>
+          </div>
+        <div class="row mt-5">
+          
+          <div class="col-md-6 col-lg-6 col-sm-12 mx-auto d-flex align-items-center justify-content-center">
+            <div class="fs-5 w-75">
+              Harmony Infra is a renowned real estate developer known for its commitment to quality, innovation, and customer satisfaction. With a portfolio of successful residential and commercial projects, Harmony Infra has established itself as a trusted name in the real estate industry. The company focuses on creating sustainable and modern living spaces that cater to the evolving needs of urban dwellers. Their projects are characterized by thoughtful design, premium amenities, and strategic locations, making them a preferred choice for homebuyers and investors alike.
+            </div>
+        </div>
+          <div class="col-md-6 col-lg-6 col-sm-12 mx-auto d-flex align-items-center justify-content-center">
+            <img src="images/aaaa.jpeg" class="img-fluid w-75" alt="">
+        </div>
+        <div> 
       </section>
 
+
       <!-- Floor Plans Section -->
-      <section class="text-center">
-        <div class="mb-3"><span>Available Floor Plans</span></div>
-        <div>Harmony</div>
-        <h3 class="mb-2">THE HORIZON RESIDENCES</h3>
-        <div>offers 4 BHK, 4.5 BHK, and 5 BHK luxury apartments. Fill the form below to download floor plans.</div>
-        <div class="row mt-4 justify-content-center">
-          <div class="col-12 col-sm-4 mb-2">
-            <img class="floorplan-img" src="images/f2.webp" alt="4 BHK Floor Plan">
-          </div>
-          <div class="col-12 col-sm-4 mb-2">
-            <img class="floorplan-img" src="images/f1.webp" alt="4.5 BHK Floor Plan">
-          </div>
-          <div class="col-12 col-sm-4 mb-2">
-            <img class="floorplan-img" src="images/f3.webp" alt="5 BHK Floor Plan">
-          </div>
-        </div>
-      </section>
+     <section class="text-center">
+  <div class="mb-3"><span>Available Floor Plans</span></div>
+  <div>Harmony</div>
+  <h3 class="mb-2" style="color:#8a7e4d;">THE HORIZON RESIDENCES</h3>
+  <div>offers 4 BHK, 4.5 BHK, and 5 BHK luxury apartments. Fill the form below to download floor plans.</div>
+  <div class="row mt-5 justify-content-center ">
+    <div class="col-12 col-sm-4 mb-2">
+      <img class="floorplan-img img-fluid rounded shadow" src="images/5BHK _241004.jpg" alt="4 BHK Floor Plan" 
+           data-bs-toggle="modal" data-bs-target="#floorplanModal" onclick="showModalImg(this)">
+    </div>
+    <div class="col-12 col-sm-4 mb-2">
+      <img class="floorplan-img img-fluid rounded shadow" src="images/4.5 BHK _241004_page-0001.jpg" alt="4.5 BHK Floor Plan" 
+           data-bs-toggle="modal" data-bs-target="#floorplanModal" onclick="showModalImg(this)">
+    </div>
+    <div class="col-12 col-sm-4 mb-2">
+      <img class="floorplan-img img-fluid rounded shadow" src="images/4BHK_241004_page-0001.jpg" alt="5 BHK Floor Plan" 
+           data-bs-toggle="modal" data-bs-target="#floorplanModal" onclick="showModalImg(this)">
+    </div>
+  </div>
+
+  <!-- Bootstrap Modal -->
+  <div class="modal fade" id="floorplanModal" tabindex="-1" aria-labelledby="floorplanModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content bg-transparent border-0" >
+        <button type="button" class="btn-close position-absolute top-0 end-0 m-3" style="color:#fff" data-bs-dismiss="modal" aria-label="Close"></button>
+        <img id="modalImg" src="" alt="Floor Plan Large" class="img-fluid rounded shadow" style="max-height:85vh; margin: 0 auto; display:block;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function showModalImg(img) {
+  document.getElementById('modalImg').src = img.src;
+}
+</script>
+
+
+      <section class="container-fluid py-5">
+  <h2 class="text-center fw-bold mb-4" style="color: #ab8d4d; font-family: serif;">
+    Pricing & Payment Plan
+  </h2>
+  <div class="table-responsive">
+    <table class="table table-bordered align-middle table-dark" >
+      <thead>
+        <tr>
+          <th>Flexi Plan</th>
+          <th>Rate (₹/sq.ft)</th>
+          <th>On Booking</th>
+          <th>Within 30 Days</th>
+          <th>On OC Application</th>
+          <th>On Offer of Possession</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>3070</td>
+          <td>16,999</td>
+          <td>10% of BSP</td>
+          <td>20% of BSP</td>
+          <td>Car Parking ₹2L, 65% BSP, EEC, FFC, Power Backup, Club Membership</td>
+          <td>IFMS</td>
+        </tr>
+        <tr>
+          <td>4060</td>
+          <td>15,999</td>
+          <td>10% of BSP</td>
+          <td>30% of BSP</td>
+          <td>Parking ₹2L, 55% BSP, PLC, EEC, FFC, Power Backup, Club Membership</td>
+          <td>5% of BSP IFMS</td>
+        </tr>
+        <tr>
+          <td>5050</td>
+          <td>14,999</td>
+          <td>10% of BSP</td>
+          <td>40% of BSP</td>
+          <td>Parking ₹2L, 45% BSP, PLC, EEC, FFC, Power Backup, Club Membership</td>
+          <td>5% of BSP IFMS</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="mt-4 text-white"><strong>Other Charges:</strong> Club Membership ₹10L, Covered Car Parking ₹2L, Power Backup ₹2L, Additional ₹25K per KVA, PLC as per floor/type.</p>
+  <p class="text-muted small"><em>Prices valid till 21st October 2025. Taxes & government levies extra as applicable.</em></p>
+</section>
+
 
       <!-- Living Experience Section -->
       <section>
-        <strong>Harmony promises a living experience like no other.</strong>
-        <ul class="checks">
+        <strong style="color:#8a7e4d; " class="fs-5">Harmony promises a living experience like no other.</strong>
+        <ul class="checks mt-5 d-flex flex-column gap-2">
           <li>Offers well-designed 4 & 5 BHK apartments.</li>
           <li>Close to schools, hospitals, shopping malls, and essential amenities.</li>
           <li>Early investors can secure homes in a promising location.</li>
@@ -350,15 +711,15 @@
           <p>The current pre-launch offer price for this property is approx Rs 15,000/- sq ft + other charges (approx. Rs 500-600/- sq ft). This price is expected to rise to approx. Rs 16,500/- sq ft to Rs 17,000/- sq ft + other charges.</p>
           <p>Their pre-booking payment plan is structured in the ratio of 40:30:30, i.e.</p>
           <ul class="checks">
-            <li>40% payment at the time of launch</li>
-            <li>30% at the time of superstructure completion</li>
-            <li>30% at the time of possession</li>
+            <li style="color:#8a7e4d;">40% payment at the time of launch</li>
+            <li style="color:#8a7e4d;">30% at the time of superstructure completion</li>
+            <li style="color:#8a7e4d;">30% at the time of possession</li>
           </ul>
         </div>
       </section>
 
       <!-- Payment Plan & Master Plan Section -->
-      <div class="row text-center">
+      <!-- <div class="row text-center">
         <div class="col-md-6">
           <h2>PAYMENT PLAN</h2>
           <img src="images/costing-details.jpg" class="img-fluid" alt="Payment Plan">
@@ -367,13 +728,43 @@
           <h2>MASTER PLAN</h2>
           <img src="images/master-plan.jpg" class="img-fluid" alt="Master Plan">
         </div>
-      </div>
+      </div> -->
+     <div class="row text-center">
+  <div class="col-md-6 mb-3">
+    <h2>PAYMENT PLAN</h2>
+    <img src="images/costing-details.jpg" class="img-fluid rounded shadow" alt="Payment Plan"
+         data-bs-toggle="modal" data-bs-target="#planModal2" onclick="showModalImg2(this)">
+  </div>
+  <div class="col-md-6 mb-3">
+    <h2>MASTER PLAN</h2>
+    <img src="images/master-plan.jpg" class="img-fluid rounded shadow" alt="Master Plan"
+         data-bs-toggle="modal" data-bs-target="#planModal2" onclick="showModalImg2(this)">
+  </div>
+</div>
+
+<!-- Unique Modal for these images -->
+<div class="modal fade" id="planModal2" tabindex="-1" aria-labelledby="planModal2Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content bg-transparent border-0">
+      <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+      <img id="modalImg2" src="" alt="Plan Large" class="img-fluid rounded shadow" style="max-height:85vh; margin: 0 auto; display:block;">
+    </div>
+  </div>
+</div>
+
+<script>
+function showModalImg2(img) {
+  document.getElementById('modalImg2').src = img.src;
+}
+</script>
+
+
 
       <!-- Location and Benefits -->
-      <section>
+      <section class="mt-4 text-center">
         <h2>Connectivity & Location Benefits - The Horizon Residences - Indirapuram Ghaziabad.</h2>
-        <iframe class="map-embed" src="https://maps.google.com/maps?q=Harmony%20Infra&t=m&z=10&output=embed&iwloc=near" title="Harmony Infra"></iframe>
-        <div>Indirapuram is Ghaziabad’s most desirable location, majorly preferred by government employees, bank staff, bureaucrats, and IT professionals working in Central Delhi, Ghaziabad, and Sector 62, Noida. Living in The Horizon Residences – Indirapuram Ghaziabad, Indirapuram, means easy access to major highways (NH 24 – 5 mins drive) and metro lines (Sector 62 and Vaishali metro station – 10 mins drive), making commutes a breeze. Residents can also have easy access to facilities such as malls (North India Mall), hospitals (Max Super Speciality Hospital, Yashoda Hospital), top-tier educational institutes (DPS Indirapuram, Cambridge School), etc., located in proximity. Additionally, the project is located directly opposite the Indirapuram Habitat Center and near good residential townships, which could positively impact resale and rental demand.</div>
+        <iframe class="map-embed mt-4" src="https://maps.google.com/maps?q=Harmony%20Infra&t=m&z=10&output=embed&iwloc=near" title="Harmony Infra"></iframe>
+        <div class="mt-5">Indirapuram is Ghaziabad’s most desirable location, majorly preferred by government employees, bank staff, bureaucrats, and IT professionals working in Central Delhi, Ghaziabad, and Sector 62, Noida. Living in The Horizon Residences – Indirapuram Ghaziabad, Indirapuram, means easy access to major highways (NH 24 – 5 mins drive) and metro lines (Sector 62 and Vaishali metro station – 10 mins drive), making commutes a breeze. Residents can also have easy access to facilities such as malls (North India Mall), hospitals (Max Super Speciality Hospital, Yashoda Hospital), top-tier educational institutes (DPS Indirapuram, Cambridge School), etc., located in proximity. Additionally, the project is located directly opposite the Indirapuram Habitat Center and near good residential townships, which could positively impact resale and rental demand.</div>
       </section>
 
       <!-- Gallery Section -->
@@ -406,7 +797,7 @@
           <p>&copy; 2025 The Horizon Residences by Harmony Infra</p>
         </div>
       </footer> -->
-	   <footer class="bg-[#050B35] text-white py-8">
+	   <footer class="bg-[#050B35] text-white py-8 mt-4">
   <div class="container mx-auto px-4">
     <div class="text-center">
       <p class="text-sm leading-relaxed mb-4">
@@ -415,11 +806,10 @@
       <p class="text-sm leading-relaxed mb-4">
         Actual could substantially differ from the above. The viewer / prospective buyer may seek all such information including sanctioned plans, approvals, development schedule, specifications, facilities &amp; amenities, from the company in respect of the concerned project that he/she may be interested in, before any such booking/registration, etc. Further, details of the project are available on the company/site/marketing office(s) and/or company website and on the website or RERA, Delhi @ rera.delhi.gov.in or at its office.
       </p>
-      <div class="border-t border-gray-600 pt-4 mt-4">
+      <div class="border-t border-gray-600 py-4 mt-4">
         <p class="text-sm">
           © 2025 The Horizon Residences by Harmony Infra. All rights reserved. | 
           <a href="#" class="text-[#d4af37] hover:underline ml-1">Privacy Policy</a> | 
-          <a href="https://readdy.ai/?origin=logo" class="text-[#d4af37] hover:underline ml-1">Website Builder</a>
         </p>
       </div>
     </div>
